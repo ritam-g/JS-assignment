@@ -1,80 +1,171 @@
-// 🧠 JavaScript Assignment - 27 Oct 2025
-// Author: Ritam Maty
-// This script demonstrates variables, console methods, string operations, and data types in JS.
+// -----------------------------------------------
+// 1) Arithmetic Operators
+// -----------------------------------------------
 
-// Variables and Keywords (var, let, const)
-let a = "ritam";
-let b = "maty";
-let c = "from Bengal";
+let i= 10,o = 20;
+console.log(i + o);
+console.log(i - o);
+console.log(i * o);
+console.log(i / o);
+console.log(i % o);
 
-a = "swarnim";
-b = "swarup";
-c = "from Odisha";
-console.log(a + " " + b + " " + c);
+// -----------------------------------------------
+// 2) Assignment Operators
+// -----------------------------------------------
 
-// var scope example
-{
-    var x = "hello";
-}
+let x = 5;
+x += 3;
+console.log(x);
+x -= 3;
+console.log(x);
+x *= 3;
+console.log(x);
+x /= 3;
 console.log(x);
 
-// const examples
-const pi = 3.14;
-const pin = 502236;
-const rollno = 21;
-console.log(pi + " " + pin + " " + rollno);
+// -----------------------------------------------
+// 3) Increment & Decrement Operators
+// -----------------------------------------------
 
-// Console messages
-console.info("This is info message");
-console.warn("This is warning message");
+let count = 0;
+console.log(count);
+count++;
+console.log(count);
+count--;
+console.log(count);
 
-// Prompt and alert
-let name = prompt("Enter your name:");
-alert("Hello " + name);
+// -----------------------------------------------
+// 4) Comparison Operators (== vs ===)
+// -----------------------------------------------
 
-// Age and type checking
-let age = prompt("Enter your age:");
-age = parseInt(age);
-console.log("After adding 5 with your age: " + (age + 5));
-console.log(typeof age);
+console.log("checking with == ", 5 == '5');
+console.log("checking with === ", 5 === '5');
 
-// Working with strings
-let data = "I love Sheryians";
-console.log(data.slice(0, 6));
-console.log("This is split for breaking the string:", data.split(''));
-data = data.replace("love", "study at");
-console.log("After replacing the string:", data);
+// -----------------------------------------------
+// 5) Logical Operators
+// -----------------------------------------------
 
-// Template string and includes()
-let text = "    hello world    ";
-console.log(`This is my first programming in JS so ${text.trim()}`);
+if (10 > 5 || 10 < 20 && 10 == 10) {
+    console.log("condition is true");
+} else {
+    console.log("condition is false");
+}
 
-let msg = "love";
-let check = msg.includes("love");
-console.log(check);
+if (true && false) {
+    console.log("right");
+} else {
+    console.log("wrong")
+}
 
-let s1 = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.";
-let s2 = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.";
-let statement = s1 + " " + s2;
-console.log(statement);
+if (!(true)) {
+    console.log("right");
+} else {
+    console.log("wrong")
+}
 
-// Multiple statements in one line
-console.log("Hello 1"); console.log("Hello 2"); console.log("Hello 3");
+// -----------------------------------------------
+// 6) Bitwise Operators
+// -----------------------------------------------
 
-// Expression and statement
-let val = (1 + 1) * 10;
-console.log(val);
+console.log(5 & 1);
+console.log(5 | 1);
 
-// Primitive vs Reference Types
-let numA = 10;
-let numB = numA;
-numB = 30;
-console.log(numA, numB); // 10, 30
+// -----------------------------------------------
+// 7) Hoisting - var
+// -----------------------------------------------
 
-let obj1 = {
-    name: "Ritam",
-    age: 21
-};
-let obj2 = obj1;
-obj2.age = 22;
-console.log(obj1); // { name: "Ritam", age: 22 }
+console.log(a);
+var a = 10;
+
+// -----------------------------------------------
+// 8) Hoisting - let (Reference Error)
+// -----------------------------------------------
+
+// console.log(b);
+let b = 20;
+
+// -----------------------------------------------
+// 9) Function Declaration Hoisting
+// -----------------------------------------------
+
+text();
+function text() {
+    console.log("hello world");
+}
+
+// -----------------------------------------------
+// 10) Function Expression (Only declared, not hoisted fully)
+// -----------------------------------------------
+
+var call = function () {
+    console.log("function expression");
+}
+call();
+
+// -----------------------------------------------
+// 11) If-Else (Age Check)
+// -----------------------------------------------
+
+let age = Number(prompt("Enter your age: "));
+if (age >= 18) {
+    console.log("You are eligible to vote");
+} else {
+    console.log("You are not eligible to vote");
+}
+
+// -----------------------------------------------
+// 12) Else-If (Marks Grade)
+// -----------------------------------------------
+
+let marks = Number(prompt("Enter your marks: "));
+if (marks <= 100 && marks >= 90) {
+    console.log("A grade");
+} else if (marks < 90 && marks >= 75) {
+    console.log("b grade");
+} else if (marks < 75 && marks >= 50) {
+    console.log("C grade");
+} else {
+    console.log("Fail");
+}
+
+// -----------------------------------------------
+// 13) Switch Case (City Check)
+// -----------------------------------------------
+
+let city = prompt("Enter your city: ");
+switch (city) {
+    case "kolkata":
+        console.log("joy of happyiness");
+        break;
+    case "delhi":
+        console.log("capital");
+        break;
+    default:
+        console.log("unknown city");
+}
+
+// -----------------------------------------------
+// 14) Ternary Operator (Score Pass/Fail)
+// -----------------------------------------------
+
+let score = Number(prompt("Enter your score: "));
+score > 35 ? console.log("pass") : console.log("fail");
+
+// -----------------------------------------------
+// 15) Ternary Operator (Temperature)
+// -----------------------------------------------
+
+let temparature = 40;
+temparature > 30 ? console.log("hot") : console.log("pleasant");
+
+// -----------------------------------------------
+// 16) Logical Condition (Voting Eligibility)
+// -----------------------------------------------
+
+let age2 = Number(prompt("Enter your age: "));
+let country = prompt("Enter your country: ");
+if (age2 >= 18 && country === "india") {
+    console.log("You are eligible to vote");
+} else {
+    console.log("You are not eligible to vote");
+}
